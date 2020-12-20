@@ -1,0 +1,449 @@
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+    src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'), url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'), url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'), url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova_rgbold';
+    src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+    src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'), url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'), url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'), url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'adelle_rgregular';
+    src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
+    src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'), url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'), url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'), url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+}
+
+.title {
+    position: absolute;
+    top: 4vh;
+    left: 45%;
+    height: 24px;
+    width: 128px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav__list {
+    position: absolute;
+    margin: 10px;
+    align-items: center;
+    list-style: none;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 11px 25px;
+    font-family: 'proxima_nova_regular', Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 15px;
+    z-index: 1;
+}
+
+li:hover {
+    color: rgba(56, 213, 82, 1);
+}
+
+.right {
+    display: flex;
+    justify-content: space-evenly;
+    height: 9vh;
+    width: 20vw;
+    left: 60vw;
+}
+
+.left {
+    display: flex;
+    justify-content: space-around;
+    height: 9vh;
+    width: 20vw;
+    left: 5vw;
+}
+
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        top: var(--header-height);
+        right: -100%;
+        width: 80%;
+        height: 100%;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, .3);
+        transition: .5s;
+        backdrop-filter: blur(10px);
+    }
+}
+
+.nav__link {
+    color: white;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__logo {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--body-font2);
+    color: var(--white-color);
+}
+
+.nav__toggle {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.signIn-btn {
+    position: absolute;
+    top: 3vh;
+    left: 79vw;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 10px 25px 10px 25px;
+    background-color: rgba(56, 213, 82, 1);
+    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.signIn-btn:hover {
+    background-color: black;
+    transition: .3s ease-in-out;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 660px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+ul.slides input {
+    display: none;
+}
+
+.slide-container {
+    display: block;
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+    z-index: -1;
+}
+
+.slide-image a {
+    position: absolute;
+    z-index: 1000;
+}
+
+.slide-image img {
+    object-fit: cover;
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    font-size: 50px;
+    line-height: 660px;
+    color: #fff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 0px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover+.carousel-controls label {
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 5%;
+    text-align: left;
+    left: 15px;
+}
+
+.carousel-controls .next-slide {
+    width: 5%;
+    text-align: right;
+    right: 15px;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked+.slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked+.slide-container .carousel-controls label {
+    display: block;
+}
+
+input#img-1:checked~.carousel-dots label#img-dot-1,
+input#img-2:checked~.carousel-dots label#img-dot-2,
+input#img-3:checked~.carousel-dots label#img-dot-3,
+input#img-4:checked~.carousel-dots label#img-dot-4,
+input#img-5:checked~.carousel-dots label#img-dot-5,
+input#img-6:checked~.carousel-dots label#img-dot-6 {
+    opacity: 1;
+}
+
+input:checked+.slide-container .nav label {
+    display: block;
+}
+
+.text {
+    position: absolute;
+    top: 30vh;
+    left: 6vw;
+    letter-spacing: 1px;
+    color: white;
+    text-align: justify;
+    font-family: 'proxima_nova_regular', sans-serif;
+}
+
+.text1 {
+    font-size: 53px;
+}
+
+.text2 {
+    margin-top: 5vh;
+    font-size: 18px;
+}
+
+.learn-btn {
+    position: absolute;
+    top: 68vh;
+    left: 6vw;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 35px;
+    background-color: rgba(56, 213, 82, 1);
+    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.learn-btn:hover {
+    background-color: black;
+    transition: .3s ease-in-out;
+}
+
+.about-btn {
+    position: absolute;
+    top: 68vh;
+    left: 6vw;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 35px;
+    background-color: black;
+    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.contact-btn {
+    position: absolute;
+    top: 68vh;
+    left: 45%;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 35px;
+    background-color: white;
+    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+    color: black;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.text3 {
+    position: absolute;
+    top: 30vh;
+    left: 30%;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    color: white;
+    text-align: justify;
+    font-family: 'proxima_nova_regular', sans-serif;
+}
+
+.text4 {
+    text-align: center;
+    font-size: 53px;
+}
+
+.text5 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.section2 {
+    position: absolute;
+    height: 100vh;
+    width: 35%;
+    font-family: 'Poppins';
+}
+
+.text-1 {
+    position: relative;
+    top: 30%;
+    left: 6vw;
+    font-size: 36px;
+}
+
+.text-2 {
+    position: relative;
+    top: 32%;
+    left: 6vw;
+    font-size: 16px;
+    color: gray;
+}
+
+.section3 {
+    position: relative;
+    height: 200vh;
+    width: 35%;
+    left: 50%;
+    font-family: 'Poppins';
+}
+
+.text-3 {
+    position: relative;
+    top: 65%;
+    font-size: 36px;
+}
+
+.text-4 {
+    position: relative;
+    top: 67%;
+    left: 0%;
+    font-size: 16px;
+    color: gray;
+}
+
+.view-btn {
+    position: absolute;
+    top: 171vh;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 35px;
+    border: solid rgba(56, 213, 82, 1) 2px;
+    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+    color: rgba(56, 213, 82, 1);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.view-btn:hover {
+    background-color: rgba(56, 213, 82, 1);
+    color: white;
+    transition: .3s ease-in-out;
+}
